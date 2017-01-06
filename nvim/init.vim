@@ -2,20 +2,6 @@ if &compatible
 	set nocompatible
 endif
 
-if has("autocmd")
-	filetype plugin indent on
-	" filetype dependent settings
-	au Filetype vhdl call FT_vhdl()
-	" filetype dependent templates
-	au BufNewFile *.{vhd,py,tex,asm,sh,c,java,html} call Template_Load(expand("%"))
-	" replace $template:date$ and $template:filename$
-	au BufNewFile *.{vhd,py,tex,asm,html} call Template_Replace_Special()
-else
-	set autoindent
-endif 
-
-source ~/.config/nvim/vhdl.vim
-
 set runtimepath+=~/.config/nvim/repos/github.com/Shougo/dein.vim
 
 call dein#begin(expand('~/.config/nvim/repos/github.com/.cache/dein'))
@@ -30,7 +16,6 @@ call dein#add('morhetz/gruvbox')
 "status line
 call dein#add('vim-airline/vim-airline')
 call dein#add('vim-airline/vim-airline-themes')
-let g:airline_powerline_fonts = 1
 set encoding=utf-8
 
 call dein#add('vim-scripts/taglist.vim')
@@ -44,8 +29,7 @@ call dein#add('plasticboy/vim-markdown')
 " Shows git status for curent file/branch.
 " >> https://github.com/airblade/vim-gitgutter
 call dein#add ('airblade/vim-gitgutter')
-GitGutterEnable 
-"GitGutterLineHighlightsEnable
+
 
 "default value for max change signes if no
 "changes ar not shown with signes any more
@@ -60,15 +44,34 @@ call dein#add('rust-lang/rust.vim')
 "call dein#add('racer-rust/vim-racer')
 "call dein#add('ctrlpvim/ctrlp.vim')
 
+"GitGutterLineHighlightsEnable
+GitGutterEnable 
+
 colorscheme gruvbox
 set background=dark
 
 
 call dein#end()
 
+let g:airline_powerline_fonts = 1
+
+if has("autocmd")
+	filetype plugin indent on
+	" filetype dependent settings
+	au Filetype vhdl call FT_vhdl()
+	" filetype dependent templates
+	au BufNewFile *.{vhd,py,tex,asm,sh,c,java,html} call Template_Load(expand("%"))
+	" replace $template:date$ and $template:filename$
+	au BufNewFile *.{vhd,py,tex,asm,html} call Template_Replace_Special()
+else
+	set autoindent
+endif 
+
+source ~/.config/nvim/vhdl.vim
 
 
-call map(dein#check_clean(), "delete(v:val, 'rf')")
+
+"call map(dein#check_clean(), "delete(v:val, 'rf')")
 
 syntax enable
 
