@@ -7,7 +7,7 @@ set runtimepath+=~/.config/nvim/repos/github.com/Shougo/dein.vim
 call dein#begin(expand('~/.config/nvim/repos/github.com/.cache/dein'))
 
 call dein#add('~/.config/nvim/repos/github.com/Shougo/dein.vim')
-"call dein#add('Shougo/neocomplete.vim')
+call dein#add('Shougo/neocomplete.vim')
 
 "Theme stuff
 call dein#add('morhetz/gruvbox')
@@ -20,6 +20,13 @@ set encoding=utf-8
 
 call dein#add('vim-scripts/taglist.vim')
 call dein#add('vim-scripts/ctags.vim')
+call dein#add('terryma/vim-multiple-cursors')
+
+call dein#add('junegunn/vim-easy-align')
+
+" matlab stuff
+call dein#add('daeyun/vim-matlab')
+call dein#add('vim-scripts/MatlabFilesEdition')
 
 call dein#add('scrooloose/nerdtree')
 
@@ -71,7 +78,6 @@ source ~/.config/nvim/vhdl.vim
 
 
 
-"call map(dein#check_clean(), "delete(v:val, 'rf')")
 
 syntax enable
 

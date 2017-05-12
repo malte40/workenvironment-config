@@ -4,7 +4,20 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
 tnoremap <ESC> <C-\><C-n>
+
+nnoremap ö }
+nnoremap Ö {
+
+"mappings for spell check sanity
+noremap <C-l>  [s
+nnoremap <C-h> ]s 
+nnoremap ü z= 
 
 "navigate through windows with alt key and hjkl
 tnoremap <A-h> <C-\><C-n><C-w>h
