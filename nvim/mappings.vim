@@ -98,6 +98,7 @@ autocmd FileType tex inoremap ,tt    \texttt{}<Space>(<>)<Esc>T{i
 autocmd FileType tex inoremap ,bt    {\blindtext}
 autocmd FileType tex inoremap ,nu    $\varnothing$
 autocmd FileType tex inoremap ,col   \begin{columns}[T]<Enter>\begin{column}{.5\textwidth}<Enter><Enter>\end{column}<Enter>\begin{column}{.5\textwidth}<Enter>(<>)<Enter>\end{column}<Enter>\end{columns}<Esc>5kA
+autocmd FileType tex inoremap ,m     \begin{equation}<Return>(<>)<Return>\end{equation}<Esc>3k
 """END
 
 autocmd FileType bib inoremap ,b @book{ <Enter>title<Space>=<Space>{(<>)}, <Enter>author<Space>=<Space>{(<>)}, <Enter>publisher<Space>=<Space>{(<>)}, <Enter>isbn<Space>=<Space>{(<>)}, <Enter>year<Space>=<Space>{(<>)}, <Enter>series<Space>=<Space>{(<>)}, <Enter>edition<Space>=<Space>{(<>)}, <Enter>volume<Space>=<Space>{(<>)}<Enter><BS>}<Enter>(<>)<Esc>10kA,<Esc>i
