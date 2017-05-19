@@ -70,6 +70,8 @@ if has("autocmd")
 	au BufNewFile *.{vhd,py,tex,asm,sh,c,java,html} call Template_Load(expand("%"))
 	" replace $template:date$ and $template:filename$
 	au BufNewFile *.{vhd,py,tex,asm,html} call Template_Replace_Special()
+        " set default TeX flavor if *.tex file is found
+        autocmd BufRead,BufNewFile *.tex set filetype=tex
 else
 	set autoindent
 endif 
